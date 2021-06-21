@@ -1,0 +1,11 @@
+<!--자유협력 상세페이지-->
+{% load static %}
+{% block content %}
+
+<h1>{{blog.title}}</h1>
+작성자: {{blog.writer}}
+날짜: {{blog.pup_date}}
+<hr>
+<p>{{blog.body}}</p>
+
+{% endblock %}
