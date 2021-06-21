@@ -19,11 +19,7 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.mainpage, name="mainpage"), #메인페이지
-    path('competition/', views.competition, name="competition"), #공모전페이지
-    path('study/', views.study, name="study"), #스터디페이지
-    path('volunteer/', views.volunteer, name="volunteer"), #봉사페이지
-    path('free/', views.free, name="free"), #자유협력페이지
     path('accounts/', include('allauth.urls')),
     path('users/', include('users.urls')),
+    path('',include('main.urls')),
 ]
