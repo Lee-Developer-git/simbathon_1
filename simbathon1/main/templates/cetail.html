@@ -1,0 +1,12 @@
+<!--팀원구하기 상세페이지-->
+<!--vlog어쩌고 괄호들은 없애면 오류가 뜹니다!! 저 아이들을 가지고 계신 템플릿에 적절하게 배치해주셔요-->
+{% load static %}
+{% block content %}
+
+<h1>{{vlog.title}}</h1>
+작성자: {{vlog.writer}}
+날짜: {{vlog.pup_date}}
+<hr>
+<p>{{vlog.body}}</p>
+
+{% endblock %}
