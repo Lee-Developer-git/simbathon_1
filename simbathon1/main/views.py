@@ -31,7 +31,7 @@ def dnew(request): #자유협력 글쓰기
 def dcreate(request):
     dnew_blog=Blog()
     dnew_blog.title=request.POST['title']
-    dnew_blog.writer=request.POST['writer']
+    dnew_blog.writer=request.user
     dnew_blog.pub_date=timezone.now()
     dnew_blog.body=request.POST['body']
     dnew_blog.save()
@@ -43,7 +43,7 @@ def cnew(request): #팀원구하기 글쓰기
 def ccreate(request):
     cnew_vlog=Vlog()
     cnew_vlog.title=request.POST['title']
-    cnew_vlog.writer=request.POST['writer']
+    cnew_vlog.writer=request.user
     cnew_vlog.pub_date=timezone.now()
     cnew_vlog.body=request.POST['body']
     cnew_vlog.save()

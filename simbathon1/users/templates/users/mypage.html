@@ -10,7 +10,7 @@
                     <div class="card-body text-center">
                         <h4 class="text-uppercase m-0">Profile</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">프로필 : </div>
+                        <p class="small text-black-50">사용자 : {{user.username}}</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,12 @@
                     <div class="card-body text-center">
                         <h4 class="text-uppercase m-0">작성한 게시글</h4>
                         <hr class="my-4 mx-auto" />
-                        <div class="small text-black-50">post </div>
+                        {% for blog in blogs %}
+                        <a href="{% url 'main:detail' blog.id %}" class="small text-black-50">{{blog.title}} </a>
+                        {% endfor %}
+                        {% for vlog in vlogs %}
+                        <a href="{% url 'main:cetail' blog.id %}" class="small text-black-50">{{vlog.title}} </a>
+                        {% endfor %}
                         <h4 class="text-uppercase m-0">작성한 댓글</h4>
                         <hr class="my-4 mx-auto" />
                         <div class="small text-black-50">comment </div>
