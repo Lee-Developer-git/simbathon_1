@@ -14,6 +14,8 @@
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase">야너희두</h1>
+                        <br>
+                        <img src="../static/assets/img/ele.png.png" width="50%" height="50%">
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">봉사를 함께하고 공모전도 나가보고 친구도 만들고!</h2>
                         <a class="btn btn-primary" href="#about"><h4>시작하기</h4></a>
                     </div>
@@ -25,15 +27,16 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
+                        <h2 class="text-white mb-4">커뮤니티에 들어온 목적이 무엇인가요?
+                        </h2>
                         <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                            아래 설명들이 선택을 도와줄거예요!<br><br>
+                            잠깐 로그인을 하지않으면 게시판을 읽고,쓰는데 제한이 있을 수 있어요.<br>
+                            <a href="{% url 'account_login' %}"> ▶로그인하기◀ </a>
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+                <img class="img-fluid" src="../static/assets/img/ipad.png" alt="..." />
             </div>
         </section>
         <!-- Projects-->
@@ -41,23 +44,23 @@
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../static/assets/img/bg-masthead.jpg" alt="..." /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="https://post-phinf.pstatic.net/MjAyMDA3MjFfMTY1/MDAxNTk1MzIxODI2NTA2.5wzgcsDonhkKgJa43_pny5_f9mDAsAboVqoxT18P6BMg.oAYho8D61Kx2Tx8-5n_14DzOVTU_dy95xwNH9DEJDHYg.JPEG/tid354t000040.jpg?type=w1200" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4><a href="{% url 'main:free' %}">자유협력</a></h4>
+                            <h5 class="text-black-50 mb-0">잡지 만들어 볼 사람?<br>밥먹을 사람?<br>공구할 사람?<br>출사 갈사람?<br>커뮤니티 규정을 준수하는한 그 어떤 목적도 좋아요!</h5>
                         </div>
                     </div>
                 </div>
                 <!-- Project One Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="../static/assets/img/demo-image-01.jpg" alt="..." /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="https://img.freepik.com/free-vector/female-give-trophy-for-the-competition-winner-flat-style-design-illustration_90661-469.jpg?size=626&ext=jpg" alt="..." /></div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Misty</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                    <h4 class="text-white"><a href="{% url 'main:competition' %}">팀원구하기</a></h4>
+                                    <h5 class="mb-0 text-white-50">이번 OO기업에서하는 공모전에 △△동아리원이 함께하면 좋겠다구요? <br>그렇다면 이 게시판에 글을 올려보아요.</h5>
                                     <hr class="d-none d-lg-block mb-0 ms-0" />
                                 </div>
                             </div>
@@ -104,9 +107,9 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
+                                <h4 class="text-uppercase m-0">동국대학교</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                                <div class="small text-black-50">서울특별시 중구 장충동 필동로1길 30</div>
                             </div>
                         </div>
                     </div>
@@ -114,7 +117,7 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
+                                <h4 class="text-uppercase m-0">사이트 문제 신고</h4>
                                 <hr class="my-4 mx-auto" />
                                 <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
                             </div>
@@ -124,9 +127,9 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <h4 class="text-uppercase m-0">연락처</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                                <div class="small text-black-50">02-2260-3114</div>
                             </div>
                         </div>
                     </div>
