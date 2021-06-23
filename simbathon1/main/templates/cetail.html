@@ -8,5 +8,7 @@
 날짜: {{vlog.pup_date}}
 <hr>
 <p>{{vlog.body}}</p>
+<a href="{% url 'main:cedit' vlog.id %}">수정하기</a>
+<a href="{% url 'main:celete' vlog.id %}">삭제하기</a>
 
 {% endblock %}

@@ -48,3 +48,39 @@ def ccreate(request):
     cnew_vlog.body=request.POST['body']
     cnew_vlog.save()
     return redirect('main:cetail',cnew_vlog.id)
+
+def dedit(request,id):
+    dedit_blog=Blog.objects.get(id=id)
+    return render(request, 'dedit.html', {'blog':dedit_blog})
+
+def dupdate(request,id):
+    dupdate_blog =Blog.objects.get(id=id)
+    dupdate_blog.title=request.POST['title']
+    dupdate_blog.writer=request.user
+    dupdate_blog.pub_date=timezone.now()
+    dupdate_blog.body=request.POST['body']
+    dupdate_blog.save()
+    return redirect('main:detail',dupdate_blog.id)
+
+def cedit(request,id):
+    cedit_vlog=Vlog.objects.get(id=id)
+    return render(request, 'cedit.html',{'vlog':cedit_vlog})
+
+def cupdate(request,id):
+    cupdate_vlog=Vlog.objects.get(id=id)
+    cupdate_vlog.title=request.POST['title']
+    cupdate_vlog.writer=request.user
+    cupdate_vlog.pub_date=timezone.now()
+    cupdate_vlog.body=request.POST['body']
+    cupdate_vlog.save()
+    return redirect('main:cetail',cupdate_vlog.id)
+
+def delete(request,id): #자유협력 삭제
+    delete_blog=Blog.objects.get(id=id)
+    delete_blog.delete()
+    return redirect('main:free')
+
+def celete(request,id): #자유협력 삭제
+    celete_vlog=Vlog.objects.get(id=id)
+    celete_vlog.delete()
+    return redirect('main:competition')

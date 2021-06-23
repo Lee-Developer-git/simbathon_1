@@ -1,0 +1,8 @@
+{% load static %}
+
+<form action="{% url 'main:dupdate' blog.id %}" method="POST">
+    {%csrf_token%}
+    <p>제목: <input type="text" name="title" value="{{blog.title}}"></p>
+    <p>내용: <textarea type="text" name="body" id="" cols="30" rows="10">{{blog.body}}</textarea></p>
+    <button type="submit">제출</button>
+</form>

@@ -1,0 +1,9 @@
+<!--팀원구하기 글쓰기-->
+{% load static %}
+
+<form action="{% url 'main:cupdate' vlog.id %}" method="POST">
+    {%csrf_token%}
+    <p>제목: <input type="text" name="title" value="{{vlog.title}}"></p>
+    <p>내용: <textarea type="text" name="body" id="" cols="30" rows="10">{{vlog.body}}</textarea></p>
+    <button type="submit">제출</button>
+</form>
