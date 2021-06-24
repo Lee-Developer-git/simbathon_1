@@ -1,0 +1,11 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<br/><br/><br/>
+<form action="{% url 'users:create' %}" method="POST">
+    {%csrf_token%}
+    <p> 오픈 채팅 : <input type="text" name="kakao"></p>
+    <p> 소개글 : <textarea type="text" name="body" id="" cols="30" rows="10"></textarea></p>
+    <button type="submit">프로필 작성</button>
+</form>
+{% endblock %}

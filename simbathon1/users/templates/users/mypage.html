@@ -33,7 +33,7 @@
                             <h2 class="card-title h4">{{vlog.title}}</h2>
                                 {{vlog.writer}}<br>
                                 <p class="card-text">{{vlog.summary}}</p>
-                                <a class="btn btn-primary" href="{%url 'main:cetail' vlog.id %}">Read more →</a>
+                                <a class="btn btn-primary" href="{%url 'main:cetail' vlog.id %}" style="float: right;">Read more →</a>
                         </div>
                     </div>
                 {% endfor %}
