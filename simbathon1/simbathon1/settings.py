@@ -146,4 +146,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/' #로그인 시 이동하는 페이지
 
+ACCOUNT_FORMS = {'login': 'users.forms.CustomLoginForm'}
+ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
