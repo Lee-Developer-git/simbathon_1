@@ -2,12 +2,58 @@
 
 {% load static %}
 {% block content %}
-<div class="container">
-    <h1>{{user.username}}</h1>
-    <div>
-        {% for blog in blogs %}
-            <a href="{% url 'main:detail' blog.id %}">{{blog.title}}</a>
-        {% endfor %}
+<div>
+    <div class="d-flex justify-content-center" style="background-color: #919191; height: 230px; color: #C8C8C8;">
+        <h1 class="mt-5"><b>MYPAGE</b></h1>
+    </div>
+    <div class="container">
+        <div id="left" class="ms-5" style="width: 25%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
+            <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">PROFILE</h4>
+            <h5>{{user.username}}</h5>
+        </div>
+        <div id="right" class="ms-5" style="width: 60%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
+            <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">
+                <a id="post" onclick="selpost()">내가 쓴 글 / </a>
+                <a id="comment" onclick="selcomment()">내가 쓴 댓글</a>
+            </h4>
+            <div id="selectpost">
+                {% for blog in blogs %}
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title h4">{{blog.title}}</h2>
+                                {{blog.writer}}<br>
+                                <p class="card-text">{{blog.summary}}</p>
+                            <a class="btn btn-primary" href="{%url 'main:detail' blog.id %}" style="float: right;">Read more →</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% for vlog in vlogs %}
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title h4">{{vlog.title}}</h2>
+                                {{vlog.writer}}<br>
+                                <p class="card-text">{{vlog.summary}}</p>
+                                <a class="btn btn-primary" href="{%url 'main:cetail' vlog.id %}">Read more →</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="selectcomment" style="display: none;">
+                <a>comment</a>
+            </div>
+        </div>
     </div>
 </div>
+<script>
+    var post = document.querySelector('#selectpost');
+    var comment = document.querySelector('#selectcomment');
+    function selpost(){
+        post.style.display = '';
+        comment.style.display = 'none';
+    }
+    function selcomment(){
+        post.style.display = 'none';
+        comment.style.display = '';
+    }
+</script>
 {% endblock %}
