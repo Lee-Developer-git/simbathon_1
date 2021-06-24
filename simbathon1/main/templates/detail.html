@@ -7,6 +7,8 @@
 날짜: {{blog.pup_date}}
 <hr>
 <p>{{blog.body}}</p>
+{% if user == blog.writer %}
 <a href="{% url 'main:edit' blog.id %}">수정하기</a>
 <a href="{% url 'main:delete' blog.id %}">삭제하기</a>
+{% endif %}
 {% endblock %}

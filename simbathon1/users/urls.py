@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import *
+from django.urls import path
+from . import views
 
 app_name="users"
 urlpatterns = [
-    path('mypage/', mypage, name="mypage"),
+    path('mypage/', views.mypage, name="mypage"),
 ]
