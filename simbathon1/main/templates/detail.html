@@ -1,14 +1,33 @@
 <!--자유협력 상세페이지-->
+{% extends 'shared/base.html' %}
+
 {% load static %}
 {% block content %}
+<div>
+    <div class="d-flex justify-content-center" style="background-color: #919191; height: 230px; color: #C8C8C8;">
+        <h1 class="mt-5"><b>자유협력 상세페이지</b></h1>
+    </div>
+    <div class="container">
+        <div id="left" class="ms-5" style="width: 25%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
+            <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">작성자</h4>
+            <h5>작성자: {{blog.writer}}<br>
+                날짜: {{blog.pup_date}}</h5>
+                {% if user == blog.writer %}
+                    <a href="{% url 'main:dedit' blog.id %}">수정하기</a>
+                    <a href="{% url 'main:delete' blog.id %}">삭제하기</a>
+                {% endif %}
+        </div>
+        <div id="right" class="ms-5" style="width: 60%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
+            <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">
+                <a id="post">{{blog.title}}</a>
+                
+            </h4>
+            <div id="selectpost">
+                <p>{{blog.body}}</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
-<h1>{{blog.title}}</h1>
-작성자: {{blog.writer}}
-날짜: {{blog.pup_date}}
-<hr>
-<p>{{blog.body}}</p>
-{% if user == blog.writer %}
-<a href="{% url 'main:edit' blog.id %}">수정하기</a>
-<a href="{% url 'main:delete' blog.id %}">삭제하기</a>
-{% endif %}
 {% endblock %}

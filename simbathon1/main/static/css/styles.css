@@ -30,7 +30,7 @@
   --bs-info: #1cabc4;
   --bs-warning: #e4c662;
   --bs-danger: #a16468;
-  --bs-light: #f8f9fa;
+  --bs-light: #919191;
   --bs-dark: #212529;
   --bs-black: #000;
   --bs-white: #fff;
@@ -7593,7 +7593,7 @@ textarea.form-control-lg {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #919191 !important;
 }
 
 .bg-dark {

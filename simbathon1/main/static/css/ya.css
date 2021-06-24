@@ -3704,7 +3704,7 @@ textarea.form-control-lg {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #232527;
   white-space: nowrap;
 }
 
@@ -7413,7 +7413,7 @@ textarea.form-control-lg {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #919191 !important;
 }
 
 .bg-dark {
