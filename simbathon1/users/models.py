@@ -6,4 +6,4 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     gender = models.CharField(max_length=50, default="")
     kakao = models.CharField(max_length=100, default="")
-    body = models.CharField(max_length=200, default="")
+    club = models.CharField(max_length=100, default="")

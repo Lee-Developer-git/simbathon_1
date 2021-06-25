@@ -8,6 +8,7 @@ class Blog(models.Model):
     writer=models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date=models.DateTimeField()
     body=models.TextField()
+    tag=models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.title
@@ -20,6 +21,7 @@ class Vlog(models.Model):
     writer=models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date=models.DateTimeField()
     body=models.TextField()
+    tag=models.CharField(max_length=200, null=True)
     
     def __str__(self):
         return self.title

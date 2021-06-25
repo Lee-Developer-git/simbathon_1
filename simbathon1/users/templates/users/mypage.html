@@ -10,6 +10,11 @@
         <div id="left" class="ms-5" style="width: 25%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
             <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">PROFILE</h4>
             <h5>{{user.username}}</h5>
+            {% for pf in profile %}
+                <h5>성별 : {{pf.gender}}</h5>
+                <h5>카카오 오픈 톡방 : {{pf.kakao}}</h5>
+                <h5>동아리 : {{pf.club}}</h5>
+            {% endfor %}
         </div>
         <div id="right" class="ms-5" style="width: 60%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
             <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">
