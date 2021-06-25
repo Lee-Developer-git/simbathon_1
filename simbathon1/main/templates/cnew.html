@@ -1,9 +1,76 @@
 <!--팀원구하기 글쓰기-->
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% include 'shared/headSetting.html' %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <style>
 
-<form action="{% url 'main:ccreate' %}" method="POST">
-    {%csrf_token%}
-    <p>제목: <input type="text" name="title"></p>
-    <p>내용: <textarea type="text" name="body" id="" cols="30" rows="10"></textarea></p>
-    <button type="submit">제출</button>
-</form>
+                body {
+                
+                  padding-top: 70px;
+                
+                  padding-bottom: 30px;
+                
+                }                              
+                </style>
+</head>
+<body>
+        {% include 'shared/navbar.html' %}
+   <article >
+
+      <div class="container" role="main" style="border: 10px; border-color: grey;">
+
+         <h2 style="padding-top: 10%;">글쓰기</h2><br>
+
+         <form name="form" id="form" role="form" method="post" action="${pageContext.request.contextPath}/board/saveBoard">
+
+            <div class="mb-3">
+
+               <label for="title">제목</label>
+
+               <input type="text" class="form-control" name="title" id="title" placeholder="[대외활동/공모전/봉사/스터디/친목] 카테고리를 명시하세요.">
+
+            </div>
+
+            
+            
+
+            <div class="mb-3">
+
+               <label for="content">내용</label>
+
+               <textarea class="form-control" rows="5" name="content" id="content" placeholder="내용을 입력해 주세요" ></textarea>
+
+            </div>
+
+            
+
+            <div class="mb-3">
+
+               <label for="tag">컨택</label>
+
+               <input type="text" class="form-control" name="tag" id="tag" placeholder="오픈채팅링크 또는 메일을 넣어주세요.">
+
+            </div>
+
+         
+
+         </form>
+
+         <div >
+
+            <button type="button" class="btn btn-sm btn-primary" id="btnSave">저장</button>
+
+            <button type="button" class="btn btn-sm btn-primary" id="btnList" href="javascript:history.back()">목록</button>
+
+         </div>
+
+      </div>
+
+   </article>
+
+</body>
+</html>
