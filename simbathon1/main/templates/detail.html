@@ -10,8 +10,8 @@
     <div class="container">
         <div id="left" class="ms-5" style="width: 25%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
             <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">작성자</h4>
-            <h5>작성자: {{blog.writer}}<br>
-                날짜: {{blog.pup_date}}</h5>
+            <h5>작성자: {{blog.writer}}<br/>
+                오픈채팅링크: {{blog.tag}}</h5>
                 {% if user == blog.writer %}
                     <a href="{% url 'main:dedit' blog.id %}">수정하기</a>
                     <a href="{% url 'main:delete' blog.id %}">삭제하기</a>
