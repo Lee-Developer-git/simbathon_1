@@ -17,8 +17,7 @@
 </head>
 <body>
 
-{% block content %}
-<div>
+    {% include 'shared/navbar.html' %}
     <header class="py-5 bg-light border-bottom mb-4" style="padding-top: 0%;">
         <div class="container">
             <div class="text-center my-5">
@@ -27,9 +26,6 @@
             </div>
         </div>
     </header>
-    <div class="container">
-    
-    
         <!-- Page content-->
     <div class="container">
         <div class="row">
@@ -110,5 +106,4 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
-{% endblock %}
 </html>

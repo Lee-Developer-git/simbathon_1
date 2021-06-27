@@ -35,10 +35,9 @@
                     <div class="col-lg-6">
                         <!-- Blog post-->
                         {% for vlog in vlogs %}
-                        <div class="card mb-4">
+                        <div class="card mb-3 d-inline-flex" style="width: 17rem;">
                             <a href="#!"><img class="card-img-top" src="{%static 'images/동국대로고.jpg' %}" alt="..." /></a>
                             <div class="card-body">
-                            
                                 <h2 class="card-title h4">{{vlog.title}}</h2>
                                 {{vlog.writer}}<br>
                                 <p class="card-text">{{vlog.summary}}</p>
@@ -102,3 +101,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+</body>
+</html>

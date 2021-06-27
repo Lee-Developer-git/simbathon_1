@@ -1,9 +1,21 @@
-<!--팀원구하기 글쓰기-->
+{% extends 'shared/newbase.html' %}
 {% load static %}
-
-<form action="{% url 'main:cupdate' vlog.id %}" method="POST">
-    {%csrf_token%}
-    <p>제목: <input type="text" name="title" value="{{vlog.title}}"></p>
-    <p>내용: <textarea type="text" name="body" id="" cols="30" rows="10">{{vlog.body}}</textarea></p>
-    <button type="submit">제출</button>
-</form>
+{% block content %}
+<div style="padding-top: 70px; padding-bottom: 30px;">
+   <form action="{% url 'main:ccreate' %}" method="POST">
+      {%csrf_token%}
+      <div class="container" role="main" style="border: 10px; border-color: grey;">
+         <label for="title">제목</label> <input type="text" name="title" class="form-control" value="{{vlog.title}}">
+         <label for="body">내용 :</label> <textarea type="text" name="body" class="form-control" id="" rows="5">{{vlog.body}}</textarea>
+         <label for="tag">컨택 :</label> <input type="text" class="form-control" name="tag" id="tag" value="{{vlog.tag}}">
+         <button type="submit" class="btn btn-sm btn-primary" id="btnSave">저장</button>
+         <button type="button" class="btn btn-sm btn-primary" id="btnList" onclick="back()">목록</button>
+      </div>
+   </form>
+</div>
+<script>
+   function back(){
+      window.history.back();
+   }
+</script>
+{% endblock %}

@@ -8,18 +8,26 @@
     </div>
     <div class="container">
         <div id="left" class="ms-5" style="width: 25%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
-            <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">PROFILE</h4>
-            <h5>{{user.username}}</h5>
+            <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">PROFILE</h4><br/>
+            <div class="card mb-3" style="width: 20rem;">
+                <div class="card-footer">
+                    {{user.username}}
+                </div>
+            </div>
             {% for pf in profile %}
-                <h5>성별 : {{pf.gender}}</h5>
-                <h5>카카오 오픈 톡방 : {{pf.kakao}}</h5>
-                <h5>동아리 : {{pf.club}}</h5>
+                <div class="card d-flex justify-content-center" style="width: 20rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">성별 : {{pf.gender}}</li>
+                        <li class="list-group-item">카카오 오픈 톡방 : {{pf.kakao}}</li>
+                        <li class="list-group-item">동아리 : {{pf.club}}</li>
+                    </ul>
+                </div>
             {% endfor %}
         </div>
         <div id="right" class="ms-5" style="width: 60%; border-top: 3px #7D7D7D solid; margin-top: 30px; float: left;">
             <h4 style="border-bottom: 1px #7D7D7D solid; padding: 8px;">
-                <a id="post" onclick="selpost()">내가 쓴 글 / </a>
-                <a id="comment" onclick="selcomment()">내가 쓴 댓글</a>
+                <a id="post" onclick="selpost()" style="cursor: pointer">자유협력 / </a>
+                <a id="comment" onclick="selcomment()" style="cursor: pointer">팀원구하기</a>
             </h4>
             <div id="selectpost">
                 {% for blog in blogs %}
@@ -32,6 +40,8 @@
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+            <div id="selectcomment" style="display: none;">
                 {% for vlog in vlogs %}
                     <div class="card mb-4">
                         <div class="card-body">
@@ -42,9 +52,6 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
-            <div id="selectcomment" style="display: none;">
-                <a>comment</a>
             </div>
         </div>
     </div>
