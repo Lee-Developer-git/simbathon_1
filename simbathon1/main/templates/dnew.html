@@ -5,7 +5,7 @@
    <form action="{% url 'main:dcreate' %}" method="POST">
       {%csrf_token%}
       <div class="container" role="main" style="border: 10px; border-color: grey;">
-         <label for="title">제목</label> <input type="text" name="title" class="form-control" placeholder="[대외활동/공모전/봉사/스터디/친목] 카테고리를 명시하세요.">
+         <label for="title">제목</label> <input type="text" name="title" class="form-control" placeholder="제목을 적어주세요.">
          <label for="body">내용 :</label> <textarea type="text" name="body" class="form-control" id="" rows="5" placeholder="내용을 입력해 주세요"></textarea>
          <label for="tag">컨택 :</label> <input type="text" class="form-control" name="tag" id="tag" placeholder="오픈채팅링크 또는 메일을 넣어주세요.">
          <button type="submit" class="btn btn-sm btn-primary" id="btnSave">저장</button>
