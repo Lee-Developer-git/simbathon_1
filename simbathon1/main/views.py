@@ -35,6 +35,7 @@ def dcreate(request):
     dnew_blog.writer=request.user
     dnew_blog.pub_date=timezone.now()
     dnew_blog.body=request.POST['body']
+    dnew_blog.tag=request.POST['tag']
     dnew_blog.save()
     return redirect('main:detail',dnew_blog.id)
 
@@ -47,6 +48,7 @@ def ccreate(request):
     cnew_vlog.writer=request.user
     cnew_vlog.pub_date=timezone.now()
     cnew_vlog.body=request.POST['body']
+    cnew_vlog.tag=request.POST['tag']
     cnew_vlog.save()
     return redirect('main:cetail',cnew_vlog.id)
 
